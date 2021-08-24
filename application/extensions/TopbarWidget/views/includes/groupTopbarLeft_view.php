@@ -49,7 +49,7 @@ $this->render('includes/previewSurveyAndGroupButtons_view', get_defined_vars());
             <button type="button" class="btn btn-danger btntooltip" disabled data-toggle="tooltip" data-placement="bottom" title="<?php eT("Impossible to delete this group because there is at least one question having a condition on its content"); ?>" >
                 <span class="fa fa-trash"></span>
                 <?php eT("Delete"); ?>
-            </a>
+            </button>
         <?php endif; ?>
     <?php else:?>
         <!-- Activated -->

@@ -201,7 +201,7 @@ class Permissiontemplates extends CActiveRecord
         $deleteRoleButton = '<span data-toggle="tooltip" title="' . gT('Delete user role') . '">'
             . "<button 
                 id='RoleControl--delete-" . $this->ptid . "' 
-                class='btn btn-sm btn-default red-border' 
+                class='btn btn-sm btn-default' 
                 data-toggle='modal' 
                 data-title='" . gt('Delete user role') . "'
                 data-target='#confirmation-modal'
@@ -209,7 +209,7 @@ class Permissiontemplates extends CActiveRecord
                 data-btnclass='btn-danger'
                 data-btntext='" . gt('Delete') . "' 
                 data-message='" . gT('Do you want to delete this role?') . "'>
-                    <i class='fa fa-trash'></i>
+                    <i class='fa fa-trash text-danger'></i>
               </button>"
             . '</span>';
 

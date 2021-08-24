@@ -15,7 +15,7 @@
         <?php if (Permission::model()->hasSurveyPermission($surveyid, 'responses', 'delete'))
             { ?>
             <a>
-                <span id='deleteresponse_<?php echo $dtrow['id']; ?>' title='<?php eT('Delete this response'); ?>' class='deleteresponse fa fa-trash text-warning'></span>
+                <span id='deleteresponse_<?php echo $dtrow['id']; ?>' title='<?php eT('Delete this response'); ?>' class='deleteresponse fa fa-trash text-danger'></span>
             </a>
         <?php } ?>
     </td>

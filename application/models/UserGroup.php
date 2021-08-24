@@ -340,7 +340,7 @@ class UserGroup extends LSActiveRecord
 
         // Delete user group
         if (Permission::model()->hasGlobalPermission('usergroups', 'delete')) {
-            $button .= '<button class="btn btn-default btn-sm red-border action__delete-group" data-toggle="tooltip" data-placement="top" title="' . gT('Delete user group') . '" href="#delete-modal" data-toggle="modal" data-ugid="' . $this->ugid . '" role="button"><span class="fa fa-trash"></span></button>';
+            $button .= '<button class="btn btn-default btn-sm red-border action__delete-group" data-toggle="tooltip" data-placement="top" title="' . gT('Delete user group') . '" href="#delete-modal" data-toggle="modal" data-ugid="' . $this->ugid . '" role="button"><span class="fa fa-trash text-danger"></span></button>';
         }
         $button .= "</div>";
         return $button;

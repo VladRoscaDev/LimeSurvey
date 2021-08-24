@@ -544,8 +544,8 @@ class User extends LSActiveRecord
                         data-action='deluser'
                         data-onclick='triggerRunAction($(\"#delete_user_" . $this->uid . "\"))'
                         data-message='" . gT("Do you want to delete this user?") . "'
-                        class='btn btn-default btn-sm red-border'>
-                            <span class='fa fa-trash'></span>
+                        class='btn btn-default btn-sm'>
+                            <span class='fa fa-trash text-danger'></span>
                         </button>
                     </span>";
             }
@@ -641,7 +641,7 @@ class User extends LSActiveRecord
                 class='btn btn-default btn-sm UserManagement--action--openmodal UserManagement--action--delete red-border'
                 data-toggle='tooltip' 
                 title='" . gT("Delete User") . "' 
-                data-href='" . $deleteUrl . "'><i class='fa fa-trash'></i></button>";
+                data-href='" . $deleteUrl . "'><i class='fa fa-trash text-danger'></i></button>";
 
         // Superadmins can do everything, no need to do further filtering
         if (Permission::model()->hasGlobalPermission('superadmin', 'read')) {

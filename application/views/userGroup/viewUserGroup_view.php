@@ -54,7 +54,7 @@
                                             title="<?php eT('Delete'); ?>"
                                             type="submit"
                                             onclick='return confirm("<?php eT("Are you sure you want to delete this entry?", "js"); ?>")'>
-                                            <span class="fa fa-trash text-warning"></span>
+                                            <span class="fa fa-trash text-danger"></span>
                                         </button>
                                         <input name='uid' type='hidden' value='<?php echo $currentuser["userid"]; ?>'/>
                                         <?php echo CHtml::endForm() ?>

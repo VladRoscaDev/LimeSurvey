@@ -912,7 +912,7 @@ class TokenDynamic extends LSActiveRecord
         );
         /* delete button */
         $gridButtons['deletetoken'] = array(
-            'label' => '<span class="sr-only">' . gT('Delete survey participant') . '</span><span class="text-warning fa fa-trash" aria-hidden="true"></span>',
+            'label' => '<span class="sr-only">' . gT('Delete survey participant') . '</span><span class="fa fa-trash text-danger" aria-hidden="true"></span>',
             'imageUrl' => false,
             //'url' => 'App()->createUrl("/admin/tokens/sa/deleteToken",array("sid"=>' . self::$sid . ',"sItem"=>$data->tid,"ajax"=>"true"));',
             'options' => array(

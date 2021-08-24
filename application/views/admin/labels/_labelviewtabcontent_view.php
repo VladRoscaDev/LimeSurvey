@@ -70,8 +70,8 @@ $codeids = '';
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <?php if ($first): ?>
-                                            <button class="btn btn-default btn-sm btnaddanswer"><i class="icon-add  text-success"></i></button> <?php // eT("Insert a new label after this one") ?>
-                                            <button class="btn btn-default btn-sm btndelanswer"><i class="fa fa-trash  text-warning "></i></button> <?php //eT("Delete this label") ?>
+                                            <button class="btn btn-default btn-sm btnaddanswer"><i class="icon-add text-success"></i></button> <?php // eT("Insert a new label after this one") ?>
+                                            <button class="btn btn-default btn-sm btndelanswer"><i class="fa fa-trash text-danger "></i></button> <?php //eT("Delete this label") ?>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 </div>

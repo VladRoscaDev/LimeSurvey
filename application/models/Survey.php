@@ -2190,7 +2190,7 @@ class Survey extends LSActiveRecord implements PermissionInterface
                 'export' => false,
                 'title' => gT("Survey deletion"),
                 'description' => gT("Permission to delete a survey"),
-                'img' => ' fa fa-trash',
+                'img' => ' fa fa-trash text-danger',
             ),
             'surveyactivation' => array(
                 'create' => false,

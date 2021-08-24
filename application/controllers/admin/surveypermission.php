@@ -132,7 +132,7 @@ class surveypermission extends Survey_Common_Action
                     ));
                     $deleteConfirmMessage = gT("Are you sure you want to delete this entry?");
                     $surveysecurity .= "<a data-target='#confirmation-modal' data-toggle='modal' data-message='{$deleteConfirmMessage}' data-href='{$deleteUrl}' type='submit' class='btn-xs btn btn-default'>
-                        <span class='fa fa-trash text-warning' data-toggle='tooltip' title='" . gT("Delete") . "'></span>
+                        <span class='fa fa-trash text-danger' data-toggle='tooltip' title='" . gT("Delete") . "'></span>
                         </a>";
                 }
 

@@ -140,7 +140,7 @@ class SavedControl extends LSActiveRecord
             'visible' => false,
         );
         $gridButtons['delete'] = array(
-            'label' => '<span class="sr-only">' . gT("Delete") . '</span><span class="text-warning fa fa-trash" aria-hidden="true"></span>',
+            'label' => '<span class="sr-only">' . gT("Delete") . '</span><span class="fa fa-trash text-danger" aria-hidden="true"></span>',
             'imageUrl' => false,
             'icon' => false,
             'url' => 'App()->createUrl("admin/saved/sa/actionDelete",array("surveyid"=>$data->sid,"scid"=>$data->scid,"srid"=>$data->srid));',

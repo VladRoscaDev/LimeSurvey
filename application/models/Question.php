@@ -665,7 +665,7 @@ class Question extends LSActiveRecord
                             . "\", {\"confirm_ok\": \"" . gT("Yes") . "\", \"confirm_cancel\": \"" . gT("No") . "\"}, function() {"
                             . convertGETtoPOST(Yii::app()->createUrl("questionAdministration/delete/", ["qid" => $this->qid]))
                         . "});'>"
-                    . ' <i class="text-danger fa fa-trash"></i>
+                    . ' <i class="fa fa-trash text-danger"></i>
                 </a>';
         }
         $buttons .= "</div>";
