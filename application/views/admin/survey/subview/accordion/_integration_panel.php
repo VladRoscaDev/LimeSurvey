@@ -13,7 +13,7 @@ echo viewHelper::getViewTestTag('surveyPanelIntegration');
 ?>
   <!-- Datatable translation-data -->
   <!-- Container -->
-  <div id='panelintegration' class=" tab-pane fade in text-center" >
+  <div id='panelintegration' class=" tab-pane fade in" >
     <div class="container-center">
         <div class="row">
             <table id="urlparams" class='table dataTable table-responsive table-hover table-borders' >

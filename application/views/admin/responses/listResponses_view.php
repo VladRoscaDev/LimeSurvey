@@ -83,7 +83,7 @@ echo viewHelper::getViewTestTag('surveyResponsesBrowse');
                             array(
                                 'header' => gT('Action'),
                                 'class'=>'bootstrap.widgets.TbButtonColumn',
-                                'template'=>'{detail}{quexmlpdf}{edit}{downloadfiles}{deletefiles}{deleteresponse}',
+                                'template'=>'{edit}{detail}{quexmlpdf}{downloadfiles}{deletefiles}<span data-toggle="tooltip" title="' . gT("Delete this response") . '">{deleteresponse}</span>',
                                 'htmlOptions' => array('class' => 'icon-btn-row'),
                                 'buttons'=> $model->getGridButtons('responses-grid'),
                             ),

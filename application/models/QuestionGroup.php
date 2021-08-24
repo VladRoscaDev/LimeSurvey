@@ -262,24 +262,22 @@ class QuestionGroup extends LSActiveRecord
         $surveyIsActive = $oSurvey->active !== 'N';
 
         $buttons = "<div class='icon-btn-row'>";
-        // Add question to this group
-        if (Permission::model()->hasSurveyPermission($this->sid, 'surveycontent', 'update')) {
-            $url = Yii::app()->createUrl("questionAdministration/create/surveyid/$this->sid/gid/$this->gid");
-            $buttons .= '<a class="btn btn-default list-btn ' . ($surveyIsActive ? 'disabled' : '') . ' "  data-toggle="tooltip"  data-placement="top" title="' . gT('Add new question to group') . '" href="' . $url . '" role="button"><i class="fa fa-plus " ></i></a>';
-        }
-
         // Group edition
         // Edit
         if (Permission::model()->hasSurveyPermission($this->sid, 'surveycontent', 'update')) {
             $url = Yii::app()->createUrl("questionGroupsAdministration/view/surveyid/$this->sid/gid/$this->gid");
-            $buttons .= '  <a class="btn btn-default  list-btn" href="' . $url . '" role="button" data-toggle="tooltip" title="' . gT('Edit group') . '"><i class="fa fa-pencil " ></i></a>';
+            $buttons .= '  <a class="btn btn-sm btn-default  list-btn" href="' . $url . '" role="button" data-toggle="tooltip" title="' . gT('Edit group') . '"><i class="fa fa-pencil " ></i></a>';
         }
-
+        // Add question to this group
+        if (Permission::model()->hasSurveyPermission($this->sid, 'surveycontent', 'update')) {
+            $url = Yii::app()->createUrl("questionAdministration/create/surveyid/$this->sid/gid/$this->gid");
+            $buttons .= '<a class="btn btn-sm btn-default list-btn ' . ($surveyIsActive ? 'disabled' : '') . ' "  data-toggle="tooltip"  data-placement="top" title="' . gT('Add new question to group') . '" href="' . $url . '" role="button"><i class="fa fa-plus " ></i></a>';
+        }
         // View summary
         if (Permission::model()->hasSurveyPermission($this->sid, 'surveycontent', 'read')) {
             $url = Yii::app()->createUrl("/questionGroupsAdministration/view/surveyid/");
             $url .= '/' . $this->sid . '/gid/' . $this->gid;
-            $buttons .= '  <a class="btn btn-default  list-btn" href="' . $url . '" role="button" data-toggle="tooltip" title="' . gT('Group summary') . '"><i class="fa fa-list-alt " ></i></a>';
+            $buttons .= '  <a class="btn btn-sm btn-default  list-btn" href="' . $url . '" role="button" data-toggle="tooltip" title="' . gT('Group summary') . '"><i class="fa fa-list-alt " ></i></a>';
         }
 
         // Delete
@@ -287,7 +285,7 @@ class QuestionGroup extends LSActiveRecord
             $condarray = getGroupDepsForConditions($this->sid, "all", $this->gid, "by-targgid");
             if ($oSurvey->groupsCount == 1) {
                 $buttons .= '<span data-toggle="tooltip" title="' . gT("Cannot delete this group because it's the only group in the survey.") . '">'
-                . '<button class="btn btn-default" '
+                . '<button class="btn btn-sm btn-default" '
                 . ' disabled '
                 . ' role="button"'
                 . ' data-toggle="popover"'
@@ -299,7 +297,7 @@ class QuestionGroup extends LSActiveRecord
                 . '</span>';
             } elseif (is_null($condarray)) {
                 $buttons .= '<span data-toggle="tooltip" title="' . gT('Delete question group') . '">'
-                    . '<button class="btn btn-default" '
+                    . '<button class="btn btn-sm btn-default" '
                     . ' data-onclick="(function() { ' . CHtml::encode(convertGETtoPOST(Yii::app()->createUrl("questionGroupsAdministration/delete/", ["gid" => $this->gid]))) . ' })" '
                     . ' data-target="#confirmation-modal"'
                     . ' role="button"'
@@ -312,7 +310,7 @@ class QuestionGroup extends LSActiveRecord
                     . '</span>';
             } else {
                 $buttons .= '<span data-toggle="tooltip" title="' . gT('Group cant be deleted, because of depending conditions') . '">'
-                    . '<button class="btn btn-default" '
+                    . '<button class="btn btn-sm btn-default" '
                     . ' disabled '
                     . ' role="button"'
                     . ' data-toggle="popover"'

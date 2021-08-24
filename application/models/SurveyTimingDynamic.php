@@ -184,16 +184,16 @@ class SurveyTimingDynamic extends LSActiveRecord
      */
     public function getButtons()
     {
-        // View details
-        $viewUrl = App()->createUrl("admin/responses/sa/view/surveyid/" . self::$sid . "/id/" . $this->id);
         $buttons = "<div class='icon-btn-row'>";
-        $buttons .= '<a class="btn btn-sm btn-default" href="' . $viewUrl . '" role="button" data-toggle="tooltip" title="' . gT('View response details') . '"><span class="fa fa-list-alt" ></span></a>';
-
         // Edit
         if (Permission::model()->hasSurveyPermission(self::$sid, 'responses', 'update')) {
             $editUrl = App()->createUrl("admin/dataentry/sa/editdata/subaction/edit/surveyid/" . self::$sid . "/id/" . $this->id);
             $buttons .= '<a class="btn btn-sm btn-default" href="' . $editUrl . '" role="button" data-toggle="tooltip" title="' . gT('Edit this response') . '"><span class="fa fa-pencil" ></span></a>';
         }
+        // View details
+        $viewUrl = App()->createUrl("admin/responses/sa/view/surveyid/" . self::$sid . "/id/" . $this->id);
+        $buttons .= '<a class="btn btn-sm btn-default" href="' . $viewUrl . '" role="button" data-toggle="tooltip" title="' . gT('View response details') . '"><span class="fa fa-list-alt" ></span></a>';
+
 
         // Delete
         if (Permission::model()->hasSurveyPermission(self::$sid, 'responses', 'delete')) {
