@@ -41,11 +41,11 @@
                                 $pageSizeTokenView,
                                 Yii::app()->params['pageSizeOptionsTokens'],
                                 array('class'=>'changePageSize form-control', 'style'=>'display: inline; width: auto'))),
-                        'itemsCssClass'   => 'table-responsive',
-                        'columns'         => $model->attributesForGrid,
-                        'ajaxUpdate'      => 'token-grid',
-                        'ajaxType'        => 'POST',
-                        'afterAjaxUpdate' => 'onUpdateTokenGrid'
+                        'htmlOptions'              => ['class' => 'table-responsive'],
+                        'columns'                  => $model->attributesForGrid,
+                        'ajaxUpdate'               => 'token-grid',
+                        'ajaxType'                 => 'POST',
+                        'afterAjaxUpdate'          => 'onUpdateTokenGrid'
                     ));
                 ?>
             </div>

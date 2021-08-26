@@ -648,7 +648,7 @@ class TokenDynamic extends LSActiveRecord
             array(
                 'header' => gT('Action'),
                 'class' => 'bootstrap.widgets.TbButtonColumn',
-                'template' => '{viewresponse}{spacerviewresponse}{previewsurvey}{previewsurveyspacer}{mail}{remind}{mailspacer}{edit}{deletetoken}{viewparticipant}{viewparticipantspacer}',
+                'template' => '{edit}{viewresponse}{spacerviewresponse}{previewsurvey}{previewsurveyspacer}{mail}{remind}{mailspacer}{viewparticipant}<span data-toggle="tooltip" title="' . gt('Delete survey participant') . '">{deletetoken}</span>{viewparticipantspacer}',
                 'htmlOptions' => array('class' => 'icon-btn-row'),
                 'buttons' => $this->getGridButtons(),
             ),
@@ -920,9 +920,7 @@ class TokenDynamic extends LSActiveRecord
                 ///'data-toggle' => "tooltip",
                 'data-toggle' => "modal",
                 'data-target' => '#confirmation-modal',
-                'data-title' => gt('Delete this participant'),
                 'data-message' => gt('Do you really want to delete this participant') . '?',
-                'data-btnclass' => 'btn-danger',
                 'data-href' => 'App()->createUrl("/admin/tokens/sa/deleteToken",array("sid"=>' . self::$sid . ',"sItem"=>$data->tid));',
                 'evaluateOptions' => array('data-href'),
                 'data-btntext' => gt('Delete'),

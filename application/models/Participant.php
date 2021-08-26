@@ -174,17 +174,17 @@ class Participant extends LSActiveRecord
                 // Delete button
                 $deleteData = array(
                     'red-border action_participant_deleteModal',
-                    'text-danger',
+                    '',
                     gT("Delete this participant"),
-                    'trash'
+                    'trash text-danger'
                 );
             } else {
                 // Invisible button
                 $deleteData = array(
                     'red-border action_participant_deleteModal invisible',
-                    'text-danger',
+                    '',
                     gT("Delete this participant"),
-                    'trash'
+                    'trash text-danger'
                 );
             }
             $buttons .= vsprintf($raw_button_template, $deleteData);

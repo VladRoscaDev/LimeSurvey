@@ -366,7 +366,7 @@ class Surveymenu extends LSActiveRecord
                 'action_surveymenu_deleteModal',
                 'red-border',
                 gT("Delete this survey menu"),
-                'trash'
+                'trash text-danger'
             );
 
             $buttons .= vsprintf($raw_button_template, $editData);

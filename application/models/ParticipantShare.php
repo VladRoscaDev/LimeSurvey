@@ -164,17 +164,16 @@ class ParticipantShare extends LSActiveRecord
                     'shareUid'      => $this->share_uid
                 ]
             );
-            $buttons .= "<a href='#'
+            $buttons .= "<span data-toggle='tooltip' title='" . gT("Delete sharing") . "'><a href='#'
             class='btn btn-sm btn-default action_delete_shareParticipant'
             data-toggle='modal' 
             data-target='#confirmation-modal'
             data-title='" . gt('Delete sharing') . "'
-            data-btnclass='btn-danger'
             data-btntext='" . gt('Delete') . "'
             data-message='" . gT('Do you really want to delete the sharing of this participant?') . "' 
             data-onclick='(function() { LS.CPDB.deleteSingleParticipantShare(\"" . $url . "\"); })'>"
                 . "<i class='fa fa-trash text-danger'></i>"
-                . "</a>";
+                . "</a></span>";
         }
         $buttons .= "</div>";
 

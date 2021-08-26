@@ -22,8 +22,7 @@ echo viewHelper::getViewTestTag('roles');
                 'bootstrap.widgets.TbGridView',
                 [
                     'id'              => 'RoleControl--identity-gridPanel',
-                    'itemsCssClass'   => 'table-responsive',
-                    'htmlOptions'     => ['style' => 'cursor: pointer;'],
+                    'htmlOptions'     => ['class' => 'table-responsive'],
                     'dataProvider'    => $model->search(),
                     'columns'         => $model->columns,
                     'filter'          => $model,

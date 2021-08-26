@@ -29,51 +29,53 @@
 
             <br/><br/>
             <?php if (!empty($userloop)) { ?>
-                <table class='users table table-responsive table-hover'>
-                    <thead>
-                    <tr>
-                        <th><?php eT("Action"); ?></th>
-                        <th><?php eT("Username"); ?></th>
-                        <th><?php eT("Email"); ?></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    foreach ($userloop as $currentuser) {
-                        ?>
-                        <tr class='<?php echo $currentuser["rowclass"]; ?>'>
-                            <td>
-                                <div class="icon-btn-row">
-                                    <?php
-                                    if ((isset($currentuser["displayactions"]) && $currentuser["displayactions"] == true || Permission::model()->hasGlobalPermission('superadmin')) && $currentuser["userid"] != '1') { ?>
-                                        <?php echo CHtml::form(["userGroup/DeleteUserFromGroup/ugid/{$ugid}/"], 'post'); ?>
-                                        <button
-                                            class="btn btn-default btn-sm"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="<?php eT('Delete'); ?>"
-                                            type="submit"
-                                            onclick='return confirm("<?php eT("Are you sure you want to delete this entry?", "js"); ?>")'>
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </button>
-                                        <input name='uid' type='hidden' value='<?php echo $currentuser["userid"]; ?>'/>
-                                        <?php echo CHtml::endForm() ?>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </td>
-                            <td><?php echo \CHtml::encode($currentuser["username"]); ?></td>
-                            <td><?php echo \CHtml::encode($currentuser["email"]); ?></td>
+                <div class="table-responsive">
+                    <table class='users tabletable-hover'>
+                        <thead>
+                        <tr>
+                            <th><?php eT("Action"); ?></th>
+                            <th><?php eT("Username"); ?></th>
+                            <th><?php eT("Email"); ?></th>
                         </tr>
+                        </thead>
+                        <tbody>
                         <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                        foreach ($userloop as $currentuser) {
+                            ?>
+                            <tr class='<?php echo $currentuser["rowclass"]; ?>'>
+                                <td>
+                                    <div class="icon-btn-row">
+                                        <?php
+                                        if ((isset($currentuser["displayactions"]) && $currentuser["displayactions"] == true || Permission::model()->hasGlobalPermission('superadmin')) && $currentuser["userid"] != '1') { ?>
+                                            <?php echo CHtml::form(["userGroup/DeleteUserFromGroup/ugid/{$ugid}/"], 'post'); ?>
+                                            <button
+                                                class="btn btn-default btn-sm"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title="<?php eT('Delete'); ?>"
+                                                type="submit"
+                                                onclick='return confirm("<?php eT("Are you sure you want to delete this entry?", "js"); ?>")'>
+                                                <span class="fa fa-trash text-danger"></span>
+                                            </button>
+                                            <input name='uid' type='hidden' value='<?php echo $currentuser["userid"]; ?>'/>
+                                            <?php echo CHtml::endForm() ?>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </td>
+                                <td><?php echo \CHtml::encode($currentuser["username"]); ?></td>
+                                <td><?php echo \CHtml::encode($currentuser["email"]); ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             <?php } ?>
 
             <?php

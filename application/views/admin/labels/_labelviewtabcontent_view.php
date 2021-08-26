@@ -7,9 +7,9 @@ $codeids = '';
 
 <div class="tab-content">
     <?php foreach ($lslanguages as $lslanguage): ?>
-        <div id='neweditlblset<?php echo $i ?>' class="tab-pane fade in <?php if($i==0){ echo 'active first';} else {echo "not_first";}?>">
+        <div id='neweditlblset<?php echo $i ?>' class="table-responsive tab-pane fade in <?php if($i==0){ echo 'active first';} else {echo "not_first";}?>">
             <input type='hidden' class='lslanguage' value='<?php echo $lslanguage ?>' <?php if($i==0){ echo 'id="lslanguagemain"';}?> />
-            <table class='answertable table table-responsive table-hover'>
+            <table class='answertable table table-hover'>
                 <thead>
                     <tr>
                         <?php if ($first): ?>

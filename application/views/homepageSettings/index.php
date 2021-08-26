@@ -43,7 +43,7 @@ App()->getClientScript()->registerScript(
                     [
                         'id'           => 'boxes-grid',
                         'dataProvider' => $dataProviderBox->search(),
-                        'itemsCssClass' => 'table-responsive',
+                        'htmlOptions'  => ['class' => 'table-responsive'],
                         'template'     => "{items}\n<div id='boxListPager'><div class=\"col-sm-4\" id=\"massive-action-container\"></div><div class=\"col-sm-4 pager-container ls-ba \">{pager}</div><div class=\"col-sm-4 summary-container\">{summary}</div></div>",
                         'summaryText'  => gT('Displaying {start}-{end} of {count} result(s).') . ' '
                             . sprintf(

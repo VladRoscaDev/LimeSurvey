@@ -63,9 +63,9 @@ echo viewHelper::getViewTestTag('viewLabelSets');
 
                     ),
 
-                    'htmlOptions'=> ['class' => 'table-responsive'],
-                    'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('admin/labels/sa/view/lid' ) . '/' . "' + $.fn.yiiGridView.getSelection(id.split(',', 1));}",
-                    'ajaxUpdate' => 'labelsets-grid',
+                    'htmlOptions'      => ['class' => 'table-responsive'],
+                    'selectionChanged' => "function(id){window.location='" . Yii::app()->urlManager->createUrl('admin/labels/sa/view/lid') . '/' . "' + $.fn.yiiGridView.getSelection(id.split(',', 1));}",
+                    'ajaxUpdate'       => 'labelsets-grid',
                    ));
             ?>
         </div>

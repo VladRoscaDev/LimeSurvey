@@ -117,7 +117,7 @@ class SavedControl extends LSActiveRecord
     {
         $gridButtons = array();
         $gridButtons['editresponse'] = array(
-            'label' => '<span class="sr-only">' . gT("Edit") . '</span><span class="fa fa-list-alt" aria-hidden="true"></span>',
+            'label' => '<span class="sr-only">' . gT("Edit") . '</span><span class="fa fa-pencil" aria-hidden="true"></span>',
             'imageUrl' => false,
             'url' => 'App()->createUrl("admin/dataentry/sa/editdata/subaction/edit",array("surveyid"=>$data->sid,"id"=>$data->srid));',
             'options' => array(
@@ -159,16 +159,16 @@ class SavedControl extends LSActiveRecord
     {
         return array(
             array(
-                'header' => gT("ID"),
-                'name' => 'scid',
-                'filter' => false,
-            ),
-            array(
                 'header' => gT('Action'),
                 'class' => 'bootstrap.widgets.TbButtonColumn',
                 'template' => '{editresponse}{delete}',
                 'htmlOptions' => array('class' => 'icon-btn-row'),
                 'buttons' => $this->gridButtons,
+            ),
+            array(
+                'header' => gT("ID"),
+                'name' => 'scid',
+                'filter' => false,
             ),
             array(
                 'header' => gT("Identifier"),

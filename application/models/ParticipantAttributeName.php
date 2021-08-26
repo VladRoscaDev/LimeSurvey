@@ -125,7 +125,7 @@ class ParticipantAttributeName extends LSActiveRecord
             'red-border action_attributeNames_deleteModal',
             '',
             gT("Delete this attribute"),
-            'trash'
+            'trash text-danger'
         );
         $buttons .= "<a href='#' 
         data-toggle='modal' 

@@ -101,11 +101,11 @@ $baseLanguage = $oSurvey->language;
                         );
                         $this->widget('ext.LimeGridView.LimeGridView', array(
                             'dataProvider' => $model->search(),
-                            'id' => 'question-grid',
-                            'emptyText' => gT('No questions found.'),
-                            'itemsCssClass' => 'table-responsive',
-                            'template' => "{items}\n<div id='questionListPager'><div class=\"col-sm-4\" id=\"massive-action-container\">$massiveAction</div><div class=\"col-sm-4 pager-container ls-ba \">{pager}</div><div class=\"col-sm-4 summary-container\">{summary}</div></div>",
-                            'summaryText' => gT('Displaying {start}-{end} of {count} result(s).') . ' '
+                            'id'           => 'question-grid',
+                            'emptyText'    => gT('No questions found.'),
+                            'htmlOptions'  => ['class' => 'table-responsive'],
+                            'template'     => "{items}\n<div id='questionListPager'><div class=\"col-sm-4\" id=\"massive-action-container\">$massiveAction</div><div class=\"col-sm-4 pager-container ls-ba \">{pager}</div><div class=\"col-sm-4 summary-container\">{summary}</div></div>",
+                            'summaryText'  => gT('Displaying {start}-{end} of {count} result(s).') . ' '
                                 . sprintf(
                                     gT('%s rows per page'),
                                     CHtml::dropDownList(

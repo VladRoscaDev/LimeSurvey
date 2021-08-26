@@ -29,7 +29,11 @@
                         $this->pageSize,
                         Yii::app()->params['pageSizeOptions'],
                         array('class'=>'changePageSize form-control', 'style'=>'display: inline; width: auto'))),
-
+                'htmlOptions' => ['class' => 'table-responsive'],
+                'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('surveyAdministration/view/iSurveyID' ) . '/' . "' + $.fn.yiiGridView.getSelection(id.split(',', 1));}",
+                'ajaxUpdate' => 'survey-grid',
+                'afterAjaxUpdate' => 'function(id, data){window.LS.doToolTip();bindListItemclick();}',
+                'template'  => $this->template,
                 'columns' => array(
 
                     array(
@@ -143,11 +147,6 @@
                     ),
 
                 ),
-                'htmlOptions'=>array('class'=>'table table-hover'),
-                'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('surveyAdministration/view/iSurveyID' ) . '/' . "' + $.fn.yiiGridView.getSelection(id.split(',', 1));}",
-                'ajaxUpdate' => 'survey-grid',
-                'afterAjaxUpdate' => 'function(id, data){window.LS.doToolTip();bindListItemclick();}',
-                'template'  => $this->template,
             ));
         ?>
     </div>

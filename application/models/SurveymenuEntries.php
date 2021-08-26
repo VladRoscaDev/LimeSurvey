@@ -317,7 +317,7 @@ class SurveymenuEntries extends LSActiveRecord
                 'action_surveymenuEntries_deleteModal',
                 'red-border',
                 gT("Delete this survey menu entry"),
-                'trash'
+                'trash text-danger'
             );
             $editData = array(
                 'action_surveymenuEntries_editModal',

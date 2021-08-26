@@ -150,7 +150,6 @@ class LabelSet extends LSActiveRecord
             data-toggle="modal"
             data-href ="' . $url . '"
             data-message="' . $message . '"
-            data-btnclass="btn-danger"
             data-target="#confirmation-modal" 
             title="' . gT("Delete") . '" 
             href="#" >

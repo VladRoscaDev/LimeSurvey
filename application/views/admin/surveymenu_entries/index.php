@@ -32,7 +32,7 @@ echo viewHelper::getViewTestTag('surveyMenuEntries');
                         )
                     ),
                 'rowHtmlOptionsExpression' => '["data-surveymenu-entry-id" => $data->id]',
-                'itemsCssClass'            => 'table-responsive',
+                'htmlOptions'              => ['class' => 'table-responsive'],
                 'ajaxType'                 => 'POST',
                 'ajaxUpdate'               => 'surveymenu-entries-grid',
                 'template'                 => "{items}\n<div id='tokenListPager'><div class=\"col-sm-4\" id=\"massive-action-container\">$massiveAction</div><div class=\"col-sm-4 pager-container ls-ba \">{pager}</div><div class=\"col-sm-4 summary-container\">{summary}</div></div>",

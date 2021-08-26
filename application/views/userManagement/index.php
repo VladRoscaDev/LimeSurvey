@@ -53,7 +53,7 @@ echo viewHelper::getViewTestTag('usersIndex');
         <?php
             $this->widget('bootstrap.widgets.TbGridView', array(
                 'id'              => 'usermanagement--identity-gridPanel',
-                'itemsCssClass' => 'table-responsive',
+                'htmlOptions'     => ['class' => 'table-responsive'],
                 'dataProvider'    => $model->search(),
                 'columns'         => $columnDefinition,
                 'filter'          => $model,
